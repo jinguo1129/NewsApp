@@ -44,7 +44,8 @@ export default class Categories extends Component {
       pr:theProps,
       data_point:"",
       menus:menus,
-      animating:true
+      animating:true,
+      status:"",
     }
 
     //Bind functions
@@ -97,7 +98,7 @@ export default class Categories extends Component {
           objToAdd.id=doc.id;
           categories.push(objToAdd);
       
-      
+          console.log(objToAdd)
 
       });
     
