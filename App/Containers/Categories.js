@@ -119,6 +119,7 @@ export default class Categories extends Component {
   * renderHeaderImage - display header image or empty view
   */
   renderHeaderImage(){
+    console.log(this.state)
     if(this.state.pr&&
       this.state.pr.data&&
       this.state.pr.data.categorySetup&&
@@ -138,6 +139,7 @@ export default class Categories extends Component {
   * @param {String} url - link to open
   */
   openExternalApp(url) {
+    console.log(url)
     Linking.canOpenURL(url).then(supported => {
       if (supported) {
         Linking.openURL(url);
