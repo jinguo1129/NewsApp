@@ -224,6 +224,7 @@ export default class Categories extends Component {
     //We have our real data in data.item since FlatList wraps the data
     var item=data.item;
     
+    console.log(item)
 
     return (
       <TouchableOpacity

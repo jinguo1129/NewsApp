@@ -109,6 +109,9 @@ export default class Details extends Component {
   //Component Mount function
   componentDidMount(){
     firebase.auth().onAuthStateChanged(this.handleCurrentUser);
+
+    console.log(this.props.data)
+    
     
     if(this.props.data.goDirectlyToDetails){
       
