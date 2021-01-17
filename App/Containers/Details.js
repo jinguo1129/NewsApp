@@ -142,7 +142,7 @@ export default class Details extends Component {
       }
     }
 
-   
+    console.log("===========componentDidMount() end=====================")
 
   }
 
@@ -202,6 +202,7 @@ export default class Details extends Component {
               }
             }else{
               item=JSON.parse(doc._document.data.toString());
+              console.log(item)
               item.id=doc.id;
             }
             
