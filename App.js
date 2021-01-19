@@ -3,7 +3,7 @@
   Mobidonia
   daniel@mobidonia.com
 */
-console.disableYellowBox = true; //Set to false in development
+
 
 import React from 'react';
 import Expo, { Font,AppLoading, Asset, LinearGradient} from "expo";
