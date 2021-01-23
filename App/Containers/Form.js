@@ -39,6 +39,7 @@ class Form extends Component {
         "ownerID":"",
         "phoneNumber":"Your phone number",
         "eventLocation":new firebase.firestore.GeoPoint(41.22, 22.34),
+        "status":"none",
         },
        pr:isDataInProps?props.data:props.navigation.state.params,
        errorMessage: null,
@@ -157,6 +158,8 @@ class Form extends Component {
         var db=firebase.firestore();
         var docRef = db.collection(collection).doc(docId);
 
+        console.log(doc)
+
         docRef.get().then(function(doc) {
         
             if (doc.exists) {
@@ -249,6 +252,7 @@ class Form extends Component {
 
             // TO DO 
             //Open the photo in the gallery
+            console.log(imageID)
             this.handelPhotoClick(imageID)
 
         }
