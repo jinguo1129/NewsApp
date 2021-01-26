@@ -35,6 +35,7 @@ export default class Gallery extends Component {
       index:this.props.navigation.state.params.index,
       initialPage:this.props.navigation.state.params.index,
       isLoading:false,
+      status:'none',
     }
 
 
@@ -50,6 +51,7 @@ export default class Gallery extends Component {
     const { status } = await Permissions.askAsync(Permissions.CAMERA_ROLL);
     if (status === 'granted') {
       var stordeIn=FileSystem.documentDirectory + Date.now()+ '_image.jpg';
+
       console.log(stordeIn);
       this.setState({
         isLoading:true
@@ -73,6 +75,8 @@ export default class Gallery extends Component {
 
   saveToCameraRoll= async (uri)=>{
     
+    console.log(url)
+
     await CameraRoll.saveToCameraRoll(uri, 'photo').then(({ fileUri }) => {
       alert("Image downloaded!")
       this.setState({
@@ -86,6 +90,7 @@ export default class Gallery extends Component {
   }
 
   _saveToCameraRollAsynciOS = async (imagePath) => {
+    console.log(imagePath)
     this.setState({
       isLoading:true
     })
