@@ -32,7 +32,8 @@ class Home extends Component {
         category_collection:null,
         queryString:null,
         animating:true,
-        radius:10
+        radius:10,
+        status:null
     };
     
    this.getCategories = this.getCategories.bind(this);
@@ -76,6 +77,7 @@ class Home extends Component {
    if(!Config.isPreview){
       //Get the current location only if lat and lng is not passed as param
       let location = await Location.getCurrentPositionAsync({});
+      console.log(location)
       this.setState({ 
         latitude:location.coords.latitude,
         longitude:location.coords.longitude
@@ -155,6 +157,7 @@ class Home extends Component {
    async callBackLatLng(lat,lng,radius){
      var _this=this
     let address = await Location.reverseGeocodeAsync({latitude: lat, longitude:lng})
+    console.log(address)
     this.setState({
       longitude:lng,
       latitude:lat,
