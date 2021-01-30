@@ -21,8 +21,6 @@ class LocationScreen extends Component {
       initialVal:0,
       prevVal:0,
       radius:10,
-    
-      
     };
     this.checkTheValue = this.checkTheValue.bind(this);
     this.onPressZoomIn = this.onPressZoomIn.bind(this);
@@ -36,6 +34,8 @@ class LocationScreen extends Component {
   */
  async checkTheValue(value){
     
+    console.log(this.state)
+
     if(value > this.state.prevVal){
 
       //Call zoom out function
@@ -149,7 +149,7 @@ class LocationScreen extends Component {
                     
                    
                 <Slider
-                  style={{ flex: 1,marginLeft:10,marginRight:10 }}
+                  style={{ flex: 1,marginLeft:10,marginRight:10, marginTop:10 }}
                   value={this.state.initialVal}
                   minimumValue={0}
                   maximumValue={20}
