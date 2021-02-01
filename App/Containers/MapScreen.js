@@ -75,7 +75,7 @@ componentDidMount(){
       var passedCollectionKey=this.state.pr.listingSetup?this.state.pr.listingSetup.collection_key:this.state.pr.collection_key;
       var collection_key=passedCollectionKey!=null&&passedCollectionKey.length>1?passedCollectionKey:"collection";
      
-
+      console.log(collection_key)
       ref=ref.where(collection_key, '==', db.doc(path+'_collection/'+this.state.pr.id))
     }
 
@@ -147,7 +147,7 @@ focusMap(markers, animated) {
  renderItem(data){
     //We have our real data in data.item since FlatList wraps the data
     var item=data.item;
-
+    console.log(item)
     return (
       <TouchableOpacity  onPress={()=>{this.openDetails(item)}}>
         <Smartrow isListing={true} item={item} display={this.state.pr} showRating={this.state.pr.listingSetup.showRating}>
@@ -217,7 +217,7 @@ render() {
         <View style={css.layout.mapOverlay}>
             <FlatList
                 ref={ref => { this.flatList = ref; }}
-                style={{marginBottom: 0 }}
+                style={{marginBottom: 0, marginTop: 10 }}
                 data={this.state.items}
                 horizontal={true}
                 keyExtractor={this._keyExtractor}
