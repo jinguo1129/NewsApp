@@ -140,6 +140,7 @@ export default class Master extends Component {
 
         });
 
+        console.log(data)
         //After data is stored in data, update the state
         //This will re-render the screen
         data.sort(fun.FunctionDirectory.dynamicSort("eventStart"))

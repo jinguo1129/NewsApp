@@ -28,8 +28,8 @@ export default class Notifications extends Component {
     this.state = {
       items:[],
       animating: true,
-      result: null
-
+      result: null,
+      status: 'none'
     }
 
     //Bind functions
@@ -81,6 +81,7 @@ export default class Notifications extends Component {
   async  getReadedContent(property,callback) {
     try {
       const value = await AsyncStorage.getItem('@MySuperStore:'+property);
+      console.log(value)
       if (value !== null){
         // We have data!!
         callback(JSON.parse(value),false);
@@ -109,6 +110,7 @@ export default class Notifications extends Component {
   */
   renderItem(data){
     var item=data.item;
+    console.log(item)
       var listingSetup={
         "fields": {
           "description": "message",
