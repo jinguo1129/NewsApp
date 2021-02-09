@@ -35,6 +35,8 @@ export default class OrderDetail extends Component {
 
   showShareLink() {
     
+        console.log(this.props.navigation.state.params.data)
+
         return (
           <View style={css.layout.shareOrderButton}>
             
@@ -67,11 +69,11 @@ export default class OrderDetail extends Component {
               {this.props.navigation.state.params.data.item.order[0].name}
             </Text>
             <View style={css.layout.orderContent}>
-              <Text style={[css.layout.orderUser,{marginBottom:10}]}>
+              <Text style={[css.layout.orderUser,{marginBottom:10, marginTop: 10}]}>
                 {T.user}{"\n"}
                 {this.props.navigation.state.params.data.item.delivery.email}
               </Text>
-              <Text style={{ textAlign: "center", fontSize: 13, color: "#000000", fontWeight: "400"}}>
+              <Text style={{ textAlign: "center", fontSize: 13, color: "#000000", fontWeight: "800"}}>
                 {T.orderStatus}{"\n"}
                 {this.props.navigation.state.params.data.item.status == "Just created"?"Just created":"Used"}
               </Text>
