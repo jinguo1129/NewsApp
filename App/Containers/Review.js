@@ -19,7 +19,8 @@ class Review extends Component {
       waitingForStatus:true,
       userName:"",
       uid:"",
-      avatar:""
+      avatar:"",
+      status:""
     };
     this.setUpCurrentUser = this.setUpCurrentUser.bind(this);
     this.writeAReviewInFireStore = this.writeAReviewInFireStore.bind(this);
@@ -48,6 +49,7 @@ onStarRatingPress(rating) {
 */
 setUpCurrentUser(user){
   this.getTheCurrentUserReview(user.uid)  
+  console.log(user)
     if (user != null) {
         // User is signed in.
         this.setState({
@@ -78,6 +80,7 @@ getTheCurrentUserReview(userId){
   var _this=this
 
   var db=firebase.firestore();
+  console.log(db)
  db.collection(this.props.data.listingSetup.data_point).doc(this.props.navigation.state.params.id).collection('reviews').get()
   .then(snapshot => {
     snapshot
@@ -167,6 +170,7 @@ updateNumOfRewAndRating(){
 }
 
 render() {
+    console.log(this.state)
     if(!this.state.isLoggedIn){
       return(<Login navigation={this.props.navigation}/>)
     }else if(this.state.isLoggedIn){
