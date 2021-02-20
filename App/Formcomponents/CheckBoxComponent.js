@@ -7,8 +7,7 @@ class CheckBoxComponent extends Component {
     super(props);
     this.state = {
       categories:this.props.data,
-      checked:false,
-      
+      checked:false,      
       referenceID:this.props.referenceID
     };
     this.handleChange = this.handleChange.bind(this);
@@ -18,6 +17,7 @@ class CheckBoxComponent extends Component {
   componentDidUpdate(prevProps) {
     
     // Typical usage (don't forget to compare props)
+    console.log(prevProps.data)
     if (this.props.data !== prevProps.data) {
       
       this.setState({
@@ -41,6 +41,7 @@ class CheckBoxComponent extends Component {
    */
   handleChange = (id) => {
 
+    console.log(id)
     this.setState({
       referenceID:id
     })
