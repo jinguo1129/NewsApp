@@ -74,9 +74,9 @@ exports.static=StyleSheet.create({
       height:200,
     },
     logo:{
-      width:100,
-      height:100,
-      borderRadius: 70,
+      width:120,
+      height:120,
+      borderRadius: 80,
     },
     loading:{
       flex:25,
@@ -90,7 +90,7 @@ exports.static=StyleSheet.create({
     },
     detailsScroll:{
       paddingVertical: 20,
-      bottom:0,
+      bottom:10,
       flex:1,
     },
     intemInfoLabel: {
