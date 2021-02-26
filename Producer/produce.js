@@ -208,6 +208,9 @@ function makeAppJSON(response,whatKindOfApp,firebaseMetaPath,app_id){
     
     //Now save in a app.json
     var stringToSave=JSON.stringify(appJSONTemplate, null, 2)
+
+    console.log(stringToSave)
+
     fs.writeFile((isTesting?"app_test.json":"app.json"), stringToSave, function(err) {
         if(err) {
             return console.log(err);
@@ -239,6 +242,8 @@ function downloadAppImages(response,whatKindOfApp,app_id){
     const appLogo = (isTesting?"./test/images/logo.png":"./App/Images/logo.png");
     const appNavLogo = (isTesting?"./test/images/navlogo.png":"./App/Images/navlogo.png");
     const appSplash = (isTesting?"./test/images/splash.png":"./assets/images/splash.png");
+
+     console.log(app_id)
 
     //Download all the images
     dowloadSingleImage(response.appImage,appIcon,"App logo",spinner,function(){
