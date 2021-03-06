@@ -21,14 +21,14 @@ export default StyleSheet.create({
         "backgroundColor": "red",
         "flexDirection": "row",
         "justifyContent": "flex-start",
-        "paddingLeft": 5,
-        "paddingTop": 0,
-        "paddingRight": 5
+        "paddingLeft": 10,
+        "paddingTop": 10,
+        "paddingRight": 10
     },
     "leftArea":{
       "flex":10,
       "height": headerHeight,
-      "paddingBottom":5,
+      "paddingBottom":10,
       "justifyContent": "flex-end",
       "alignItems":"flex-start"
     },
