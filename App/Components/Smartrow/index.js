@@ -43,6 +43,8 @@ export default class SmartRow extends Component {
   }
 
   getExpectedValue(forField){
+    console.log(forField)
+    console.log(this.state.item)
     if(this.state.item[this.getExpectedKey(forField)]){
       return this.state.item[this.getExpectedKey(forField)];
     }else{
@@ -54,7 +56,7 @@ export default class SmartRow extends Component {
   render() {
     var styleOfDisplay=!this.state.isListing?this.state.display.categorySetup.category_style:this.state.display.listingSetup.listing_style;
     var display=!this.state.isListing?this.state.display.categorySetup:this.state.display.listingSetup;
-    //alert(JSON.stringify(display))
+    alert(JSON.stringify(display))
     display.grid_with_space=true;
     if(styleOfDisplay=="grid1"){
       display.grid_rows=1;
