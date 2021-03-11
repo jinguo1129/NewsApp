@@ -16,6 +16,8 @@ class Photos extends Component {
   }
   componentDidUpdate(prevProps) {
     // Typical usage (don't forget to compare props):
+    console.log(prevProps)
+    console.log(this.props)
     var tempPhotos=[{name:"Add Photo",photo:"https://firebasestorage.googleapis.com/v0/b/universalapp-a272a.appspot.com/o/addPhoto.png?alt=media&token=eeee17cf-883c-4966-a124-1e1e4a29c611",id:"1234455666667"}]
     if (this.props.photos !== prevProps.photos) {
       this.props.photos.forEach(function(element) {
