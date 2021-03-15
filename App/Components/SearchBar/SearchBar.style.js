@@ -17,16 +17,16 @@ export default StyleSheet.create({
         width:"100%",
         height:"100%",
         backgroundColor:"white",
-        borderRadius:25,
+        borderRadius:20,
         flexDirection:"row"
     },
     iconContainer:{
-        padding:13,
+        padding:20,
         paddingLeft:20,
         opacity:0.8
     },
     searchTextContainer:{
-        padding:14,
+        padding:16,
         color:"gray"
     },
     serchText:{

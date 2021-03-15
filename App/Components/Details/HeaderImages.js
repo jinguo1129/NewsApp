@@ -65,7 +65,7 @@ export default class HeaderImages extends Component {
                   autoplayInterval={4000}
                   onSnapToItem={(index) => this.setState({ slider1ActiveSlide: index }) }
                 />
-                <View style={{marginTop:-50}}>
+                <View style={{marginTop:-50, marginBottom: 10}}>
                     <Pagination
                     dotsLength={(this.props.photos?this.props.photos:[]).length}
                     activeDotIndex={slider1ActiveSlide}
