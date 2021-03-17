@@ -419,8 +419,8 @@ componentDidMount(){
 
 componentWillUnmount() {
  
-  //var _this=this;
-  //NetInfo.isConnected.removeEventListener('change', this.handleConnectionChange);
+  var _this=this;
+  NetInfo.isConnected.removeEventListener('change', this.handleConnectionChange);
 
  
 }
@@ -556,10 +556,10 @@ async checkIfPushTokenExist(){
        *  Fix for latest version on Firestore
        */
       const firestore=firebase.firestore();
-      /*const settings={
+      const settings={
         timestampsInSnapshots:true
       }
-      firestore.settings(settings);*/
+      firestore.settings(settings);
       //END FIX 
 
       _this.retreiveMeta()
