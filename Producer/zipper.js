@@ -29,7 +29,7 @@ function asker(choices,callback,questioin="What you want to do next?",addExit=tr
             filter: function( val ) { return val; }
         }]
     ).then( answers => {
-            //console.log(JSON.stringify(answers));
+            console.log(JSON.stringify(answers));
             var selected=answers.selector;//.toLowerCase().replace(/\s/g,"");
             var selectedIndex=-1;
             for (let index = 0; index < choices.length; index++) {
@@ -71,9 +71,9 @@ function makeAZipCommand(name,itemsToExcude){
         excludeCommandAsArray.push(element);
         commandAsString+=" "+element;
     });
-    //console.log(chalk.red("Execute"));
-    //commandAsString='zip -r '+name+'.zip reactfireadmin -x '+commandAsString;
-    //console.log(chalk.yellow(commandAsString))
+    console.log(chalk.red("Execute"));
+    commandAsString='zip -r '+name+'.zip reactfireadmin -x '+commandAsString;
+    console.log(chalk.yellow(commandAsString))
 
     exec('zip' ,excludeCommandAsArray, {cwd:"../"}, function(output){
         console.log(output);
